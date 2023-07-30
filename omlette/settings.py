@@ -26,8 +26,7 @@ SECRET_KEY = 'django-insecure-f9tf@h56#+m08q7gx)d9z2nh%=&oee*52zy%i*^0$+ky7xm8a-
 DEBUG = True
 
 ALLOWED_HOSTS = [
-        '0.0.0.0',
-
+    '0.0.0.0',
     '127.0.0.1',
     'localhost',
 ]
@@ -45,7 +44,7 @@ INSTALLED_APPS = [
     # 3rd party app
     'rest_framework',
     # local app
-    "breakfast",
+    "eggs",
 ]
 
 MIDDLEWARE = [
@@ -56,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'omlette.urls'
@@ -137,7 +137,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        # 'rest_framework.permissions.AllowAny',
-        'rest_framework.permissions.IsAuthenticated',
-    ],
+        'rest_framework.permissions.IsAuthenticated'
+    ]
 }
